@@ -3,11 +3,11 @@
 #import io
 #import base64
 from flask import Flask, jsonify, request
-#from flask_cors import CORS
+from flask_cors import CORS
 import requests
 
 app = Flask(__name__)
-#CORS(app)  # Enable CORS for all origins by default
+CORS(app)  # Enable CORS for all origins by default
 #run_with_ngrok(app)
 bearer_token = "AAAAAAAAAAAAAAAAAAAAAIbMtwEAAAAAqw5oqOo3o07SCqa1VZPPkEH5jf8%3D0OYxcrWdjl6KlCB9bNstF5j2Au3U4LWx85lbG83wRF3vn9rOdc"  # Replace with your actual bearer token
 
@@ -52,4 +52,4 @@ def get_user_tweets(user_id):
     } for tweet in response.json()['data']]
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
