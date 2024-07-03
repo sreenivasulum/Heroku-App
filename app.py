@@ -52,4 +52,4 @@ def get_user_tweets(user_id):
     } for tweet in response.json()['data']]
 
 if __name__ == '__main__':
-    app.run(debug=False,host="0.0.0.0")
+    app.run()
